@@ -5,7 +5,7 @@ const Card = ({ course, handleSelect }) => {
     // console.log(course)
     let { course_name, credit, description, img, price } = course;
     return (
-        <div className="flex flex-col  justify-center p-4 border shadow-md shadow-gray-400 rounded-lg space-y-2">
+        <div className="flex flex-col  justify-center p-4 border shadow-md shadow-gray-400 rounded-lg space-y-2 cursor-pointer transition-all duration-500 hover:-translate-y-2">
             <img className='h-full' src={img} alt="" />
             <p className="font-semibold text-[#1C1B1B]">{course_name}</p>
             <p className="text-xs text-start text-[#1C1B1B99]">{description}</p>
@@ -21,7 +21,7 @@ const Card = ({ course, handleSelect }) => {
                 </div>
             </div>
 
-            <button className='border bg-[#2F80ED] text-white py-1 rounded-md font-semibold' onClick={() => handleSelect(course)}>Select</button>
+            <button className='border bg-[#2F80ED] text-white py-1 rounded-md font-semibold hover:-translate-y-[0.10rem] active:translate-y-[0.10rem]' onClick={() => handleSelect(course)}>Select</button>
 
         </div>
     )

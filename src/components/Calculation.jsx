@@ -5,7 +5,7 @@ const Calculation = ({ selected, totalPrice, totalHours,remaining }) => {
             <div className="border-[#1C1B1B33] border-b mt-2"></div>
 
             <div>
-                <h1 className="font-bold text-[#1C1B1B]">Course Name</h1>
+                <h1 className="font-bold text-[#1C1B1B] underline">Course Name</h1>
                 <div className="my-5 text-[#1C1B1B99]">
                     {
                         selected.map((item, index) => <p key={index}>{`${index + 1}. ${item}`}</p>)
