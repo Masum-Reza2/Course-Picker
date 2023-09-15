@@ -1,7 +1,7 @@
 # 3 Project features
 1.This project is so user friendly.
-2.User can see what course they are buying immediatelty on the UI.
-3.If mistakenly user select a course double time, then he/she can easily see the sweet alert.The UI will prevent him selecting double.
+2.User can see what course they are picking immediatelty on the UI.
+3.If mistakenly user select a course double time, then he/she can easily see a sweet alert.The UI will prevent him selecting double.
 4.User can see selected course finish time immediately on the UI.
 5.User can look after his/her remaining credit hours.
 
