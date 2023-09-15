@@ -1,7 +1,7 @@
-const Calculation = ({ selected, totalPrice }) => {
+const Calculation = ({ selected, totalPrice, totalHours,remaining }) => {
     return (
         <div className='border lg:w-[25%] p-5 shadow-md shadow-gray-400 rounded-lg space-y-2'>
-            <p className="text-[#2F80ED] font-semibold ">Credit Hour Remaining  hrs</p>
+            <p className="text-[#2F80ED] font-semibold ">Credit Hour Remaining {remaining} hrs</p>
             <div className="border-[#1C1B1B33] border-b mt-2"></div>
 
             <div>
@@ -14,7 +14,7 @@ const Calculation = ({ selected, totalPrice }) => {
             </div>
             <div className="border-[#1C1B1B33] border-b mt-2"></div>
 
-            <p className="text-[#1C1B1BCC] font-semibold">Total Credit Hour : </p>
+            <p className="text-[#1C1B1BCC] font-semibold">Total Credit Hour : {totalHours}hrs</p>
             <div className="border-[#1C1B1B33] border-b mt-2"></div>
 
             <p className="text-[#1C1B1BCC] font-semibold">Total Price : {totalPrice} USD</p>

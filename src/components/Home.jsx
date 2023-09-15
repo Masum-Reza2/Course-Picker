@@ -15,6 +15,10 @@ const Home = () => {
     const [selected, setSelected] = useState([])
     // total price
     const [totalPrice, setTotalPrice] = useState(0)
+    // total hours
+    const [totalHours, setTotalHours] = useState(0)
+    // Remaining hours
+    const [remaining, setRemaining] = useState(20)
     const handleSelect = (data) => {
         let newArray = [...selected, data.course_name]
 
@@ -22,17 +26,25 @@ const Home = () => {
             return alert('Already booked')
         }
         else {
-            setSelected(newArray)
-            setTotalPrice(totalPrice + data.price)
+            if (totalHours > 20) {
+                alert('Time up')
+            }
+            else {
+                setSelected(newArray)
+                setTotalPrice(totalPrice + data.price)
+                setTotalHours(totalHours + data.credit)
+                setRemaining(remaining - data.credit)
+            }
+
         }
     }
-    
+
     return (
         <>
             <h1 className='text-center pt-5 font-bold text-lg md:text-2xl'>Course Registration</h1>
             <div className='flex flex-col-reverse items-center lg:items-start lg:flex-row lg:justify-center py-5 gap-4 w-[96%] mx-auto'>
                 <Courses courses={courses} handleSelect={handleSelect} />
-                <Calculation selected={selected} totalPrice={totalPrice} />
+                <Calculation selected={selected} totalPrice={totalPrice} totalHours={totalHours} remaining={remaining} />
             </div>
         </>
     )
