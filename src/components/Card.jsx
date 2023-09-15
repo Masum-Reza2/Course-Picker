@@ -1,7 +1,7 @@
 import { BsCurrencyDollar } from 'react-icons/bs'
 import { IoIosBookmarks } from 'react-icons/io'
 
-const Card = ({ course }) => {
+const Card = ({ course, handleSelect }) => {
     // console.log(course)
     let { course_name, credit, description, img, price } = course;
     return (
@@ -21,7 +21,7 @@ const Card = ({ course }) => {
                 </div>
             </div>
 
-            <button className='border bg-[#2F80ED] text-white py-1 rounded-md font-semibold'>Select</button>
+            <button className='border bg-[#2F80ED] text-white py-1 rounded-md font-semibold' onClick={() => handleSelect(course)}>Select</button>
 
         </div>
     )
