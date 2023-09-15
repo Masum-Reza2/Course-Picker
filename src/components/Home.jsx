@@ -13,6 +13,7 @@ const Home = () => {
 
     // custom sweet alert states
     const [doubleBookWarning, setDoubleBookWarning] = useState(false);
+    const [timeup, setTimeup] = useState(false);
 
     // course name
     const [selected, setSelected] = useState([])
@@ -29,12 +30,16 @@ const Home = () => {
             setDoubleBookWarning(true)
             setTimeout(() => {
                 setDoubleBookWarning(false)
-            }, 3000);
+            }, 2500);
             // return alert('Already booked')
         }
         else {
             if (totalHours + data.credit > 20) {
-                return alert('Time up')
+                setTimeup(true)
+                setTimeout(() => {
+                    setTimeup(false)
+                }, 2500);
+                // return alert('Time up')
             }
             else {
                 setSelected(newArray)
@@ -49,7 +54,10 @@ const Home = () => {
     return (
         <>
             {
-                doubleBookWarning && <p className="text-center fixed border bg-black py-5 text-white font-bold w-full text-xl top-60 max-w-7xl">Why wanna buy same course!!!</p>
+                doubleBookWarning && <p className="text-center fixed border bg-black py-5 text-yellow-600 font-bold w-full text-xl top-60 max-w-7xl transition-all duration-500">Already bought this Course!!!</p>
+            }
+            {
+                timeup && <p className="text-center fixed border bg-black py-5 text-red-600 font-bold w-full text-xl top-60 max-w-7xl transition-all duration-500">Your Budget Time is over!!!</p>
             }
             <div className='flex flex-col-reverse items-center lg:items-start lg:flex-row lg:justify-center py-5 gap-4 w-[96%] mx-auto'>
                 <Courses courses={courses} handleSelect={handleSelect} />
