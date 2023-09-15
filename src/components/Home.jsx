@@ -26,7 +26,7 @@ const Home = () => {
             return alert('Already booked')
         }
         else {
-            if (totalHours > 20) {
+            if (totalHours + data.credit > 20) {
                 alert('Time up')
             }
             else {
