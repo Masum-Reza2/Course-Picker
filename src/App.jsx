@@ -1,11 +1,20 @@
 import './App.css'
+import Heading from './components/Heading'
 import Home from './components/Home'
 
 function App() {
 
   return (
     <>
-      <Home />
+      <header>
+        <Heading />
+      </header>
+
+      <main>
+        <Home />
+      </main>
+
+      <footer></footer>
     </>
   )
 }
