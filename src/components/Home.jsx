@@ -27,7 +27,7 @@ const Home = () => {
         }
         else {
             if (totalHours + data.credit > 20) {
-                alert('Time up')
+                return alert('Time up')
             }
             else {
                 setSelected(newArray)
