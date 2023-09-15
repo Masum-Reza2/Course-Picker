@@ -1,6 +1,6 @@
 const Calculation = () => {
   return (
-    <div className='border border-black w-[30%] text-center'>
+    <div className='border border-black w-[40%] md:w-[25%] text-center'>
       <h1>Calculation</h1>
     </div>
   )
