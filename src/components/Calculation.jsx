@@ -1,6 +1,6 @@
 const Calculation = () => {
     return (
-        <div className='border w-[40%] md:w-[25%] p-5 shadow-md shadow-gray-400 rounded-lg space-y-2'>
+        <div className='border lg:w-[25%] p-5 shadow-md shadow-gray-400 rounded-lg space-y-2'>
             <p className="text-[#2F80ED] font-semibold ">Credit Hour Remaining dynamic hr</p>
             <div className="border-[#1C1B1B33] border-b mt-2"></div>
 
