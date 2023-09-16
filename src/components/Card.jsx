@@ -1,8 +1,9 @@
 import { BsCurrencyDollar } from 'react-icons/bs'
 import { IoIosBookmarks } from 'react-icons/io'
+import PropTypes from 'prop-types';
 
 const Card = ({ course, handleSelect }) => {
-    // console.log(course)
+    
     let { course_name, credit, description, img, price } = course;
     return (
         <div className="flex flex-col  justify-center p-4 border shadow-md shadow-gray-400 rounded-lg space-y-2 cursor-pointer ">
@@ -25,6 +26,12 @@ const Card = ({ course, handleSelect }) => {
 
         </div>
     )
+}
+
+
+Card.propTypes = {
+    course: PropTypes.object.isRequired,
+    handleSelect: PropTypes.func.isRequired,
 }
 
 export default Card

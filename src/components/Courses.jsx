@@ -1,5 +1,5 @@
 import Card from './Card'
-
+import PropTypes from 'prop-types';
 
 const Courses = ({ courses, handleSelect }) => {
 
@@ -10,6 +10,11 @@ const Courses = ({ courses, handleSelect }) => {
             }
         </div>
     )
+}
+
+Courses.propTypes = {
+    courses: PropTypes.array.isRequired,
+    handleSelect: PropTypes.func.isRequired,
 }
 
 export default Courses

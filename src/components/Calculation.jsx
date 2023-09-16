@@ -1,4 +1,6 @@
-const Calculation = ({ selected, totalPrice, totalHours,remaining }) => {
+import PropTypes from 'prop-types';
+
+const Calculation = ({ selected, totalPrice, totalHours, remaining }) => {
     return (
         <div className='border lg:w-[25%] p-5 shadow-md shadow-gray-400 rounded-lg space-y-2 transition-all duration-500 cursor-pointer hover:scale-105'>
             <p className="text-[#2F80ED] font-semibold ">Credit Hour Remaining {remaining} hrs</p>
@@ -21,6 +23,14 @@ const Calculation = ({ selected, totalPrice, totalHours,remaining }) => {
 
         </div>
     )
+}
+
+
+Calculation.propTypes = {
+    selected: PropTypes.array.isRequired,
+    totalPrice: PropTypes.number.isRequired,
+    totalHours: PropTypes.number.isRequired,
+    remaining: PropTypes.number.isRequired,
 }
 
 export default Calculation
