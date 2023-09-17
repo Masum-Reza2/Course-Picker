@@ -3,7 +3,7 @@
 - This project is so user friendly.
 - User can see what course they are picking immediatelty on the UI.
 - If mistakenly user select a course double time, then he/she can easily see a sweet alert.The UI will prevent him selecting double.
-- User can see selected course finish time immediately on the UI.
+- User can see selected course duration immediately on the UI.
 - User can look after his/her remaining credit hours.
 
 # state management
