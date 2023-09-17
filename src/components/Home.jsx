@@ -1,6 +1,10 @@
 import Calculation from "./Calculation"
 import Courses from "./Courses"
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+
+// toast imports
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Home = () => {
@@ -11,9 +15,27 @@ const Home = () => {
             .then(data => setCourses(data))
     }, [])
 
-    // custom sweet alert states
-    const [doubleBookWarning, setDoubleBookWarning] = useState(false);
-    const [timeup, setTimeup] = useState(false);
+    //React Toastify
+    const noDoubleSelecttion = () => toast.warn('Already selected!', {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+    });
+    const timeUp = () => toast.error('Time up!', {
+        position: "top-right",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+    });
 
     // course name
     const [selected, setSelected] = useState([])
@@ -27,18 +49,12 @@ const Home = () => {
         let newArray = [...selected, data.course_name]
 
         if (selected.includes(data.course_name)) {
-            setDoubleBookWarning(true)
-            setTimeout(() => {
-                setDoubleBookWarning(false)
-            }, 2500);
+            return noDoubleSelecttion()
             // return alert('Already booked')
         }
         else {
             if (totalHours + data.credit > 20) {
-                setTimeup(true)
-                setTimeout(() => {
-                    setTimeup(false)
-                }, 2500);
+                return timeUp()
                 // return alert('Time up')
             }
             else {
@@ -53,12 +69,7 @@ const Home = () => {
 
     return (
         <>
-            {
-                doubleBookWarning && <p className="text-center fixed border bg-black py-5 text-yellow-600 font-bold w-full text-xl top-60 max-w-7xl transition-all duration-500">Already bought this Course!!!</p>
-            }
-            {
-                timeup && <p className="text-center fixed border bg-black py-5 text-red-600 font-bold w-full text-xl top-60 max-w-7xl transition-all duration-500">Your Budget Time is over!!!</p>
-            }
+            <ToastContainer />
             <div className='flex flex-col-reverse items-center lg:items-start lg:flex-row lg:justify-center py-5 gap-4 w-[96%] mx-auto'>
                 <Courses courses={courses} handleSelect={handleSelect} />
                 <Calculation selected={selected} totalPrice={totalPrice} totalHours={totalHours} remaining={remaining} />
